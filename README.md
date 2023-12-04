@@ -33,8 +33,8 @@ public class MeshGeneration : MonoBehaviour
 		{
 			for (int x = 0; x <= xSize; x++)
 			{
-				float y = Mathf.PerlinNoise(x * .3f, z * .3f) * 2f;
-				vertices[i] = new Vector3(x, y, z);
+				float y = Mathf.PerlinNoise(x * .3f, z * .3f) * 2f;//y做上下起伏
+				vertices[i] = new Vector3(x, y, z);//建立一葛一個的正方形
 				i++;
 			}
 		}
@@ -55,7 +55,7 @@ public class MeshGeneration : MonoBehaviour
 				triangles[tris + 4] = vert + xSize + 1;
 				triangles[tris + 5] = vert + xSize + 2;
 
-				vert++;//使生成對稱vertex
+				vert++;//使生成對稱vertex1個1個加
 				tris += 6;
 			}
 			vert++;
@@ -71,5 +71,6 @@ public class MeshGeneration : MonoBehaviour
 		mesh.RecalculateNormals();
 	}
 }
+
 
 ```
